@@ -44,20 +44,28 @@
 								<li><input type="reset" value="Reset"/></li>
 							</ul>
 						</form>
+						<form name="login">
+							<ul class="actions"><input type="button" onclick="request(this.form)" value="Request Account"></ul>
+						</form>
 						<script language="javascript">
 						function check(form){
 							if(!form.human.checked || form.robot[0].checked){
 								alert("Verify your species of origin.");
 							}
-							else if(form.username.value == "AILEENHSU" && form.password.value == "HOHOHOSA"){
+							else if(form.username.value == "AILEENHSU" && form.password.value == "HOHOHOSA" && form.medid.value == "123456789"){
 								window.location.href = 'ahsu/index.html';
 							}
-							else if(form.username.value == "ROSHANLODHA" && form.password.value == "HOHOHOSA"){
+							else if(form.username.value == "ROSHANLODHA" && form.password.value == "HOHOHOSA" && form.medid.value == "000000000"){
 								window.location.href = 'rlodha/index.html';	
 							}
 							else{
 								alert("Form invalid.");
 							}
+						}
+						function request(form){
+							var name = prompt("Enter your name.");
+							var email = prompt("Enter your email.");
+							var medid = prompt("Enter your Medical ID.");
 						}
 						</script>
 						<hr />
