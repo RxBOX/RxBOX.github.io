@@ -42,7 +42,42 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script src="../amcharts/amcharts.js" type="text/javascript"></script>
         <script src="../amcharts/serial.js" type="text/javascript"></script>
+		<script src="../amcharts/pie.js" type="text/javascript"></script>
+		<script>
+			AmCharts.makeChart("chart2div", {
+                "type": "pie",
+                "dataProvider": [{
+                    "country": "Czech Republic",
+                        "litres": 156.9
+                }, {
+                    "country": "Ireland",
+                        "litres": 131.1
+                }, {
+                    "country": "Germany",
+                        "litres": 115.8
+                }, {
+                    "country": "Australia",
+                        "litres": 109.9
+                }, {
+                    "country": "Austria",
+                        "litres": 108.3
+                }, {
+                    "country": "UK",
+                        "litres": 65
+                }, {
+                    "country": "Belgium",
+                        "litres": 50
+                }],
+                "titleField": "country",
+                "valueField": "litres",
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "legend": {
+                    "align": "center",
+                    "markerType": "circle"
+                }
 
+            });
+        </script>
         <script>
             var chart;
             var graph;
@@ -332,7 +367,7 @@
                 chart.creditsPosition = "bottom-right";
 
                 // WRITE
-                chart.write("chartdiv");
+                chart.write("chart1div");
             });
 
             // this method is called when chart is first inited as we listen for "dataUpdated" event
@@ -445,12 +480,17 @@ Suicide Prevention: 1-800-273-8255</pre>
 
 						<!-- Maps -->
 							<article id="maps" class="panel">
+								<header><h2>Map</h2></header>
 								<div id="googleMap" style="width:100%;height:350px;"></div>
 							</article>
 
 						<!-- Graphs -->
 							<article id="data" class="panel">
-								<div id="chartdiv" style="width:100%; height:400px;"></div>
+								<header><h2>Statistics</h2></header>
+								<h3 align="center"><font color="#ff1a66">Drug Consumption</h>
+								<div id="chart1div" style="width:100%; height:400px;"></div>
+								<h3 align="center">Chart 2</font></h>
+								<div id="chart2div" style="width: 100%; height: 400px;"></div>
 							</article>
 					</div>
 

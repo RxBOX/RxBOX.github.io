@@ -1,51 +1,83 @@
 <html>
-	<head>
-		<title>Medical Database</title>
-		<meta charset="utf-8" />
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="/manifest.json">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-		<script type="text/javascript">
-		</script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
-		<script>
-		function initialize() {
-  		var mapProp = {
-    		center:new google.maps.LatLng(37.5447, -121.9338),
-    		zoom:16,
-    		mapTypeId:google.maps.MapTypeId.ROADMAP
-  		};
-  		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-		}
-		google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <title>Medical Database</title>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <script type="text/javascript">
+        </script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script>
+        function initialize() {
+        var mapProp = {
+            center:new google.maps.LatLng(37.5447, -121.9338),
+            zoom:16,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script src="../amcharts/amcharts.js" type="text/javascript"></script>
         <script src="../amcharts/serial.js" type="text/javascript"></script>
+        <script src="../amcharts/pie.js" type="text/javascript"></script>
+        <script>
+            AmCharts.makeChart("chart2div", {
+                "type": "pie",
+                "dataProvider": [{
+                    "country": "Czech Republic",
+                        "litres": 156.9
+                }, {
+                    "country": "Ireland",
+                        "litres": 131.1
+                }, {
+                    "country": "Germany",
+                        "litres": 115.8
+                }, {
+                    "country": "Australia",
+                        "litres": 109.9
+                }, {
+                    "country": "Austria",
+                        "litres": 108.3
+                }, {
+                    "country": "UK",
+                        "litres": 65
+                }, {
+                    "country": "Belgium",
+                        "litres": 50
+                }],
+                "titleField": "country",
+                "valueField": "litres",
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "legend": {
+                    "align": "center",
+                    "markerType": "circle"
+                }
 
+            });
+        </script>
         <script>
             var chart;
             var graph;
@@ -335,7 +367,7 @@
                 chart.creditsPosition = "bottom-right";
 
                 // WRITE
-                chart.write("chartdiv");
+                chart.write("chart1div");
             });
 
             // this method is called when chart is first inited as we listen for "dataUpdated" event
@@ -344,133 +376,140 @@
                 chart.zoomToDates(new Date(1972, 0), new Date(1984, 0));
             }
         </script>
-	</head>
-	<body>
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    </head>
+    <body>
 
-		<!-- Wrapper-->
-			<div id="wrapper">
+        <!-- Wrapper-->
+            <div id="wrapper">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#me" class="icon fa-home active"><span>Home</span></a>
-						<a href="#medication" class="icon fa-folder"><span>Work</span></a>
-						<a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
-						<a href="#maps" class="icon fa-map"><span>Maps</span></a>
-						<a href="#data" class="icon fa-area-chart"><span>Data</span></a>
-					</nav>
+                <!-- Nav -->
+                    <nav id="nav">
+                        <a href="#me" class="icon fa-home active"><span>Home</span></a>
+                        <a href="#medication" class="icon fa-folder"><span>Work</span></a>
+                        <a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+                        <a href="#maps" class="icon fa-map"><span>Maps</span></a>
+                        <a href="#data" class="icon fa-area-chart"><span>Data</span></a>
+                    </nav>
 
-				<!-- Main -->
-					<div id="main">
-						<!-- Me -->
-							<article id="me" class="panel">
-								<header>
-									<h1>Aileen Hsu</h1>
-									<pre>
-
-
+                <!-- Main -->
+                    <div id="main">
+                        <!-- Me -->
+                            <article id="me" class="panel">
+                                <header>
+                                    <h1>Aileen Hsu</h1>
+                                    <pre>
 
 
 
 
-General Physician: Dr. Quintana, M.D.
+
+
+General Physician: Dr. Quintano, M.D.
 Hospital: Kaiser Permanente
 Poison Control: 1-800-222-1222
 Suicide Prevention: 1-800-273-8255</pre>
-								</header>
-								<a href="#medication" class="jumplink pic">
-									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a>
-							</article>
+                                </header>
+                                <a href="#medication" class="jumplink pic">
+                                    <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+                                    <img src="images/me.jpg" alt="" />
+                                </a>
+                            </article>
 
-						<!-- Work -->
-							<article id="medication" class="panel">
-								<header>
-									<h2>Medication</h2>
-								</header>
-								<section>
-									<div class="row">
-										<div class="4u 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-										</div>
-										<div class="4u 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-										</div>
-										<div class="4u$ 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
-										</div>
-										<div class="4u 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-										</div>
-										<div class="4u 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-										</div>
-										<div class="4u$ 12u$(mobile)">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-										</div>
-									</div>
-									<div class="row">
-										<a href="#" download>Spreadsheet View</a>
-									</div>
-								</section>
-							</article>
+                        <!-- Work -->
+                            <article id="medication" class="panel">
+                                <header>
+                                    <h2>Medication</h2>
+                                </header>
+                                <section>
+                                    <div class="row">
+                                        <div class="4u 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+                                        </div>
+                                        <div class="4u 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+                                        </div>
+                                        <div class="4u$ 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+                                        </div>
+                                        <div class="4u 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
+                                        </div>
+                                        <div class="4u 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
+                                        </div>
+                                        <div class="4u$ 12u$(mobile)">
+                                            <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a href="#" download>Spreadsheet View</a>
+                                    </div>
+                                </section>
+                            </article>
 
-						<!-- Contact -->
-							<article id="contact" class="panel">
-								<header>
-									<h2>Contact Doctor</h2>
-								</header>
-								<form action="#" method="post">
-									<div>
-										<div class="row">
-											<div class="6u 12u$(mobile)">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="6u$ 12u$(mobile)">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="12u$">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="12u$">
-												<textarea name="message" placeholder="Message" rows="8"></textarea>
-											</div>
-											<div class="12u$">
-												<input type="submit" value="Send Message" />
-											</div>
-										</div>
-									</div>
-								</form>
-							</article>
+                        <!-- Contact -->
+                            <article id="contact" class="panel">
+                                <header>
+                                    <h2>Contact Doctor</h2>
+                                </header>
+                                <form action="MAILTO:roshanlodha@live.com" method="post" enctype="text/plain">
+                                    <div>
+                                        <div class="row">
+                                            <div class="6u 12u$(mobile)">
+                                                <input type="text" name="name" placeholder="Name" />
+                                            </div>
+                                            <div class="6u$ 12u$(mobile)">
+                                                <input type="text" name="email" placeholder="Email" />
+                                            </div>
+                                            <div class="12u$">
+                                                <input type="text" name="subject" placeholder="Subject" />
+                                            </div>
+                                            <div class="12u$">
+                                                <textarea name="message" placeholder="Message" rows="8"></textarea>
+                                            </div>
+                                            <div class="12u$">
+                                                <input type="submit" value="Send Message" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </article>
 
-						<!-- Maps -->
-							<article id="maps" class="panel">
-								<div id="googleMap" style="width:100%;height:350px;"></div>
-							</article>
+                        <!-- Maps -->
+                            <article id="maps" class="panel">
+                                <header><h2>Map</h2></header>
+                                <div id="googleMap" style="width:100%;height:350px;"></div>
+                            </article>
 
-						<!-- Graphs -->
-							<article id="data" class="panel">
-								<div id="chartdiv" style="width:100%; height:400px;"></div>
-							</article>
-					</div>
+                        <!-- Graphs -->
+                            <article id="data" class="panel">
+                                <header><h2>Statistics</h2></header>
+                                <h3 align="center"><font color="#ff1a66">Drug Consumption</h>
+                                <div id="chart1div" style="width:100%; height:400px;"></div>
+                                <h3 align="center">Chart 2</font></h>
+                                <div id="chart2div" style="width: 100%; height: 400px;"></div>
+                            </article>
+                    </div>
 
+                <!-- Footer -->
+                    <div id="footer">
+                        <ul class="copyright">
+                            <li>&copy; RxBOX | <a href="../index.html">Logout</a></li>
+                        </ul>
+                    </div>
 
-				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; RxBOX | <a href="../index.html">Logout</a></li>
-						</ul>
-					</div>
+            </div>
 
-			</div>
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/skel-viewport.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            <script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    </body>
 </html>
