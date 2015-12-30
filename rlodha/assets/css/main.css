@@ -59,6 +59,7 @@
 /* Grid */
 
 	.row {
+		margin: auto;
 		border-bottom: solid 1px transparent;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;

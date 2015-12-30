@@ -377,8 +377,53 @@
             }
         </script>
         <script>
-            function flip() {
-                $('.card').toggleClass('flipped');
+            function flip1() {
+                $('.card1').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+                $('.card4').removeClass('flipped');
+                $('.card5').removeClass('flipped');
+                $('.card6').removeClass('flipped');
+            }
+            function flip2() {
+                $('.card2').toggleClass('flipped');
+                $('.card1').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+                $('.card4').removeClass('flipped');
+                $('.card5').removeClass('flipped');
+                $('.card6').removeClass('flipped');
+            }
+            function flip3() {
+                $('.card3').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card1').removeClass('flipped');
+                $('.card4').removeClass('flipped');
+                $('.card5').removeClass('flipped');
+                $('.card6').removeClass('flipped');
+            }
+            function flip4() {
+                $('.card4').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+                $('.card1').removeClass('flipped');
+                $('.card5').removeClass('flipped');
+                $('.card6').removeClass('flipped');
+            }
+            function flip5() {
+                $('.card5').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+                $('.card4').removeClass('flipped');
+                $('.card1').removeClass('flipped');
+                $('.card6').removeClass('flipped');
+            }
+            function flip6() {
+                $('.card6').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+                $('.card4').removeClass('flipped');
+                $('.card5').removeClass('flipped');
+                $('.card1').removeClass('flipped');
             }
         </script>
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -438,9 +483,9 @@ Suicide Prevention: 1-800-273-8255</pre>
                                         -o-perspective: 800px;
                                         perspective: 800px;
                                     }
-                                    .card {
-                                        width: 260px;
-                                        height: 195px;
+                                    .card1 {
+                                        width: 100%;
+                                        height: 100%;
                                         position: relative;
                                         -webkit-transition: -webkit-transform 1s;
                                         -moz-transition: -moz-transform 1s;
@@ -452,7 +497,7 @@ Suicide Prevention: 1-800-273-8255</pre>
                                         transform-style: preserve-3d;
                                         -webkit-transform-origin: 50% 50%;
                                     }
-                                    .card div {
+                                    .card1 div {
                                         display: block;
                                         height: 100%;
                                         width: 100%;
@@ -467,18 +512,241 @@ Suicide Prevention: 1-800-273-8255</pre>
                                         -o-backface-visibility: hidden;
                                         backface-visibility: hidden;
                                     }
-                                    .card .front {
-                                      background: red;
+                                    .card1 .front {
+                                      background: white;
                                     }
-                                    .card .back {
+                                    .card1 .back {
                                         background: white;
-                                        border: 1px solid black;
                                         -webkit-transform: rotateY( 180deg );
                                         -moz-transform: rotateY( 180deg );
                                         -o-transform: rotateY( 180deg );
                                         transform: rotateY( 180deg );
                                     }
-                                    .card.flipped {
+                                    .card1.flipped {
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card2 {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        -webkit-transition: -webkit-transform 1s;
+                                        -moz-transition: -moz-transform 1s;
+                                        -o-transition: -o-transform 1s;
+                                        transition: transform 1s;
+                                        -webkit-transform-style: preserve-3d;
+                                        -moz-transform-style: preserve-3d;
+                                        -o-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
+                                        -webkit-transform-origin: 50% 50%;
+                                    }
+                                    .card2 div {
+                                        display: block;
+                                        height: 100%;
+                                        width: 100%;
+                                        vertical-align: center;
+                                        color: black;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 11px;
+                                        position: absolute;
+                                        -webkit-backface-visibility: hidden;
+                                        -moz-backface-visibility: hidden;
+                                        -o-backface-visibility: hidden;
+                                        backface-visibility: hidden;
+                                    }
+                                    .card2 .front {
+                                      background: white;
+                                    }
+                                    .card2 .back {
+                                        background: white;
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card2.flipped {
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card3 {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        -webkit-transition: -webkit-transform 1s;
+                                        -moz-transition: -moz-transform 1s;
+                                        -o-transition: -o-transform 1s;
+                                        transition: transform 1s;
+                                        -webkit-transform-style: preserve-3d;
+                                        -moz-transform-style: preserve-3d;
+                                        -o-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
+                                        -webkit-transform-origin: 50% 50%;
+                                    }
+                                    .card3 div {
+                                        display: block;
+                                        height: 100%;
+                                        width: 100%;
+                                        vertical-align: center;
+                                        color: black;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 11px;
+                                        position: absolute;
+                                        -webkit-backface-visibility: hidden;
+                                        -moz-backface-visibility: hidden;
+                                        -o-backface-visibility: hidden;
+                                        backface-visibility: hidden;
+                                    }
+                                    .card3 .front {
+                                      background: white;
+                                    }
+                                    .card3 .back {
+                                        background: white;
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card3.flipped {
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card4 {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        -webkit-transition: -webkit-transform 1s;
+                                        -moz-transition: -moz-transform 1s;
+                                        -o-transition: -o-transform 1s;
+                                        transition: transform 1s;
+                                        -webkit-transform-style: preserve-3d;
+                                        -moz-transform-style: preserve-3d;
+                                        -o-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
+                                        -webkit-transform-origin: 50% 50%;
+                                    }
+                                    .card4 div {
+                                        display: block;
+                                        height: 100%;
+                                        width: 100%;
+                                        vertical-align: center;
+                                        color: black;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 11px;
+                                        position: absolute;
+                                        -webkit-backface-visibility: hidden;
+                                        -moz-backface-visibility: hidden;
+                                        -o-backface-visibility: hidden;
+                                        backface-visibility: hidden;
+                                    }
+                                    .card4 .front {
+                                      background: white;
+                                    }
+                                    .card4 .back {
+                                        background: white;
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card4.flipped {
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card5 {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        -webkit-transition: -webkit-transform 1s;
+                                        -moz-transition: -moz-transform 1s;
+                                        -o-transition: -o-transform 1s;
+                                        transition: transform 1s;
+                                        -webkit-transform-style: preserve-3d;
+                                        -moz-transform-style: preserve-3d;
+                                        -o-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
+                                        -webkit-transform-origin: 50% 50%;
+                                    }
+                                    .card5 div {
+                                        display: block;
+                                        height: 100%;
+                                        width: 100%;
+                                        vertical-align: center;
+                                        color: black;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 11px;
+                                        position: absolute;
+                                        -webkit-backface-visibility: hidden;
+                                        -moz-backface-visibility: hidden;
+                                        -o-backface-visibility: hidden;
+                                        backface-visibility: hidden;
+                                    }
+                                    .card5 .front {
+                                      background: white;
+                                    }
+                                    .card5 .back {
+                                        background: white;
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card5.flipped {
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }.card6 {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: relative;
+                                        -webkit-transition: -webkit-transform 1s;
+                                        -moz-transition: -moz-transform 1s;
+                                        -o-transition: -o-transform 1s;
+                                        transition: transform 1s;
+                                        -webkit-transform-style: preserve-3d;
+                                        -moz-transform-style: preserve-3d;
+                                        -o-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
+                                        -webkit-transform-origin: 50% 50%;
+                                    }
+                                    .card6 div {
+                                        display: block;
+                                        height: 100%;
+                                        width: 100%;
+                                        vertical-align: center;
+                                        color: black;
+                                        text-align: center;
+                                        font-weight: bold;
+                                        font-size: 11px;
+                                        position: absolute;
+                                        -webkit-backface-visibility: hidden;
+                                        -moz-backface-visibility: hidden;
+                                        -o-backface-visibility: hidden;
+                                        backface-visibility: hidden;
+                                    }
+                                    .card6 .front {
+                                      background: white;
+                                    }
+                                    .card6 .back {
+                                        background: white;
+                                        -webkit-transform: rotateY( 180deg );
+                                        -moz-transform: rotateY( 180deg );
+                                        -o-transform: rotateY( 180deg );
+                                        transform: rotateY( 180deg );
+                                    }
+                                    .card6.flipped {
                                         -webkit-transform: rotateY( 180deg );
                                         -moz-transform: rotateY( 180deg );
                                         -o-transform: rotateY( 180deg );
@@ -486,7 +754,6 @@ Suicide Prevention: 1-800-273-8255</pre>
                                     }
                                 </style>
                                 <section>
-                                    <button onclick="flip()">Change View</button></p>
                                     <div class="row">
 <!--                                        <div class="4u 12u$(mobile)">
                                             <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
@@ -507,37 +774,37 @@ Suicide Prevention: 1-800-273-8255</pre>
                                             <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
                                         </div> -->
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card1" onclick="flip1()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
                                         </div>
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card2" onclick="flip2()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
                                         </div>
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card3" onclick="flip3()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
                                         </div>
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card4" onclick="flip4()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
                                         </div>
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card5" onclick="flip5()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
                                         </div>
                                         <div class="container">
-                                            <div class="card" onclick="flip()">
+                                            <div class="card6" onclick="flip6()">
                                                 <div class="front"><a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a></div>
                                                 <div class="back"><p>Drug Name: </p><p>Drug Dosage: </p><p>Refils Remaining: </p></div>
                                             </div>
