@@ -7,7 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="../www/style/addtohomescreen.css">
 		<script src="../www/src/addtohomescreen.js"></script>
 		<script>
-		addToHomescreen();
+		addToHomescreen({
+				mandatory: true;
+				modal: true;
+				lifespan: 0;
+		});
 		</script>
 	</head>
 	<body class="is-loading">
