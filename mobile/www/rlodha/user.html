@@ -1,0 +1,339 @@
+<html>
+    <head>
+        <title>RxBOX</title>
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <script type="text/javascript">
+        </script>
+        <script src="dist/js/smooth-scroll.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script>
+        function initialize() {
+        var mapProp = {
+            center:new google.maps.LatLng(37.5447, -121.9338),
+            zoom:16,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
+        <script src="../amcharts/pie.js" type="text/javascript"></script>
+        <script>
+            AmCharts.makeChart("chart2div", {
+                "type": "pie",
+                "dataProvider": [{
+                    "medication": "Exoderm Flare Control Cream",
+                        "oz-used": 156.9
+                }, {
+                    "medication": "Benadryl Itch Stopping Gel",
+                        "oz-used": 131.1
+                }, {
+                    "medication": "EltaMD Elta Tar",
+                        "oz-used": 115.8
+                }],
+                "titleField": "medication",
+                "valueField": "oz-used",
+                "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+                "legend": {
+                    "align": "center",
+                    "markerType": "circle"
+                }
+
+            });
+        </script>
+        <script>
+            var chart;
+            var graph;
+
+            var chartData = [
+                {
+                    "year": "2005",
+                    "value": 42
+                },
+                {
+                    "year": "2006",
+                    "value": 48
+                },
+                                {
+                    "year": "2007",
+                    "value": 50.4
+                },
+                {
+                    "year": "2008",
+                    "value": 52.5
+                },
+                {
+                    "year": "2009",
+                    "value": 54.5
+                },
+                {
+                    "year": "2010",
+                    "value": 56.5
+                },
+                {
+                    "year": "2011",
+                    "value": 58.7
+                },
+                {
+                    "year": "2012",
+                    "value": 61.5
+                },
+                {
+                    "year": "2013",
+                    "value": 64.5
+                },
+                {
+                    "year": "2014",
+                    "value": 67
+                },
+                {
+                    "year": "2015",
+                    "value": 68.3
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = chartData;
+                chart.marginLeft = 10;
+                chart.categoryField = "year";
+                chart.dataDateFormat = "YYYY";
+
+                // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
+                chart.addListener("dataUpdated", zoomChart);
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+                categoryAxis.minPeriod = "YYYY"; // our data is yearly, so we set minPeriod to YYYY
+                categoryAxis.dashLength = 3;
+                categoryAxis.minorGridEnabled = true;
+                categoryAxis.minorGridAlpha = 0.1;
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.inside = true;
+                valueAxis.dashLength = 3;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPH
+                graph = new AmCharts.AmGraph();
+                graph.type = "smoothedLine"; // this line makes the graph smoothed line.
+                graph.lineColor = "#d1655d";
+                graph.negativeLineColor = "#637bb6"; // this line makes the graph to change color when it drops below 0
+                graph.bullet = "round";
+                graph.bulletSize = 8;
+                graph.bulletBorderColor = "#FFFFFF";
+                graph.bulletBorderAlpha = 1;
+                graph.bulletBorderThickness = 2;
+                graph.lineThickness = 2;
+                graph.valueField = "value";
+                graph.balloonText = "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>";
+                chart.addGraph(graph);
+
+                // CURSOR
+                var chartCursor = new AmCharts.ChartCursor();
+                chartCursor.cursorAlpha = 0;
+                chartCursor.cursorPosition = "mouse";
+                chartCursor.categoryBalloonDateFormat = "YYYY";
+                chart.addChartCursor(chartCursor);
+
+                // SCROLLBAR
+                var chartScrollbar = new AmCharts.ChartScrollbar();
+                chart.addChartScrollbar(chartScrollbar);
+
+                chart.creditsPosition = "bottom-right";
+
+                // WRITE
+                chart.write("chart1div");
+            });
+
+            // this method is called when chart is first inited as we listen for "dataUpdated" event
+            function zoomChart() {
+                // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+                chart.zoomToDates(new Date(1972, 0), new Date(1984, 0));
+            }
+        </script>
+        <script> // 3 card-flip script
+            function flip1() {
+                $('.card1').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+            }
+            function flip2() {
+                $('.card2').toggleClass('flipped');
+                $('.card1').removeClass('flipped');
+                $('.card3').removeClass('flipped');
+            }
+            function flip3() {
+                $('.card3').toggleClass('flipped');
+                $('.card2').removeClass('flipped');
+                $('.card1').removeClass('flipped');
+            }
+        </script>
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    </head>
+    <body>
+
+        <!-- Wrapper-->
+            <div id="wrapper">
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <a data-scroll href="#me" class="icon fa-home active"><span>Home</span></a>
+                        <a data-scroll href="#medication" class="icon fa-folder"><span>Work</span></a>
+                        <a data-scroll href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+                        <a data-scroll href="#maps" class="icon fa-map"><span>Maps</span></a>
+                        <a data-scroll href="#data" class="icon fa-area-chart"><span>Data</span></a>
+                    </nav>
+
+                <!-- Main -->
+                    <div id="main">
+                        <!-- Me -->
+                            <article id="me" class="panel">
+                                <header>
+                                    <h1>Roshan Lodha</h1>
+                                    <pre>General Physician: Dr. Protter, M.D.</pre>
+                                    <pre>Hospital: Palo Alto Medical Foundation</pre>
+                                    <pre>Poison Control: 1-800-222-1222</pre>
+                                    <pre>Suicide Prevention: 1-800-273-8255</pre>
+                                </header>
+                                <a href="#medication" class="jumplink pic">
+                                    <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+                                    <img src="images/me.jpg" alt="" />
+                                </a>
+                            </article>
+
+                        <!-- Work -->
+                            <article id="medication" class="panel">
+                                <header>
+                                    <h2 align="center">Medication</h2>
+                                </header>
+                                <style type="text/css">
+                                    
+                                </style>
+                                <font face="monospace">
+                                <section>
+                                    <div class="row">
+                                        <div class="container">
+                                            <div class="card1" onclick="flip1()">
+                                                <div class="front"><a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a></div>
+                                                <div class="back"><p>Drug Name: Exederm Flare Control Cream for Eczema & Dermatitis</p><p>Drug Dosage: N/A</p><p>Refils Remaining: 1</p><p>Price: $10.99</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="container">
+                                            <div class="card2" onclick="flip2()">
+                                                <div class="front"><a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a></div>
+                                                <div class="back"><p>Drug Name: Benadryl Extra Strength Topical Analgesic Itch Stopping Gel</p><p>Drug Dosage: 3.05 oz</p><p>Refils Remaining: 1</p><p>Price: $5.84</p><</div>
+                                            </div>
+                                        </div>
+                                        <div class="container">
+                                            <div class="card3" onclick="flip3()">
+                                                <div class="front"><a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a></div>
+                                                <div class="back"><p>Drug Name: EltaMD Elta Tar</p><p>Drug Dosage: 3.8 oz</p><p>Refils Remaining: 0</p><p>Price: $18.70</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                </font>
+                            </article>
+
+                        <!-- Contact -->
+                            <article id="contact" class="panel">
+                                <header>
+                                    <h2 align="center">Contact Doctor</h2>
+                                </header>
+                                <form action="MAILTO:help.rxbox@gmail.com" method="POST">
+                                    <div>
+                                        <div class="row">
+                                            <div class="6u 12u$(mobile)">
+                                                <input type="text" name="first_name" placeholder="First Name" />
+                                            </div>
+                                            <div class="6u$ 12u$(mobile)">
+                                                <input type="text" name="email" placeholder="Email" />
+                                            </div>
+                                            <div class="12u$">
+                                                <input type="text" name="last_name" placeholder="Last Name" />
+                                            </div>
+                                            <div class="12u$">
+                                                <textarea name="message" placeholder="Message" rows="8"></textarea>
+                                            </div>
+                                            <div class="12u$">
+                                                <input type="submit" name="submit" value="Submit" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </article>
+
+                        <!-- Maps -->
+                            <article id="maps" class="panel">
+                                <header><h2 align="center">Map</h2></header>
+                                <div id="googleMap" style="width:100%;height:350px;"></div>
+                            </article>
+
+                        <!-- Graphs -->
+                            <article id="data" class="panel">
+                                <header><h2 align="center">Statistics</h2></header>
+                                <h3 align="center"><font color="#ff1a66">Height</h>
+                                <div id="chart1div" style="width:100%; height:400px;"></div>
+                                <h3 align="center">Drug Consumption</font></h>
+                                <div id="chart2div" style="width: 100%; height: 400px;"></div>
+                            </article>
+                    </div>
+
+                <!-- Footer -->
+                    <div id="footer">
+                        <ul class="copyright">
+                            <li>&copy; RxBOX | <a href="../index.html">Logout</a></li>
+                        </ul>
+                    </div>
+
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/skel-viewport.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            <script src="assets/js/main.js"></script>
+            <script>
+                smoothScroll.init();
+            </script>
+
+    </body>
+</html>

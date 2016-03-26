@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>RxBOX</title>
+		<meta charset="utf-8" />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-loading">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+							<h1>My Portal</h1>
+						</header>
+						<hr />
+						<h2>Login</h2>
+						<form name="login">
+							<div class="field">
+								<input type="text" name="username" id="username" placeholder="username" required/>
+							</div>
+							<div class="field">
+								<input type="password" name="password" id="password" placeholder="password" required/>
+							</div>
+							<div class="field">
+								<input type="password" name="medid" id="medid" placeholder="Medical ID" required/>
+							</div>
+							<div class="field">
+								<input type="checkbox" id="human" name="human" required/><label for="human">I'm a human</label>
+							</div>
+							<div class="field">
+								<label>But are you a robot?</label>
+								<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+								<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+							</div>
+							<ul class="actions">
+								<li><input type="button" onclick="check(this.form)" value="Login"/></li>
+								<li><input type="reset" value="Reset"/></li>
+							</ul>
+						</form>
+						<hr />
+						<h2>Request Account</h2>
+						<form name="sign-up">
+							<div class="field">
+								<input type="text" name="name" id="name" placeholder="name" required/>
+							</div>
+							<div class="field">
+								<input type="email" name="email" id="email" placeholder="Email" required/>
+							</div>
+							<div class="field">
+								<input type="text" name="hospital" id="hospital" placeholder="Hospital" required/>
+							</div>
+							<ul class="actions"><a href="MAILTO:roshanlodha@live.com"><input type="button" value="Request"></a></ul>
+						</form>
+						<script language="javascript" src="check.js">
+						</script>
+						<hr />
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; RxBOX</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+<?php
+
+?>
+	</body>
+</html>
