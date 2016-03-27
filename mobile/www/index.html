@@ -16,6 +16,17 @@
 		});
 		</script>
 	</head>
+	<script src="./detectmobile.js"></script>
+		<script>
+			try {
+				// This is the URL where mobile
+				detectmobile.defaultMobileURL = "./mobile/www/index.html";
+				detectmobile.process();
+			} catch(e) {
+				// Make sure that in the fault modes
+				// we do not interrupt execution of other Javascript code
+			}
+		</script>
 	<body class="is-loading">
 		<!-- Wrapper -->
 			<div id="wrapper">
