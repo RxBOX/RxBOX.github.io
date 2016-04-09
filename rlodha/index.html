@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>RxBOX</title>
   <meta charset="utf-8" />
@@ -47,29 +48,17 @@
     AmCharts.makeChart("chart2div", {
       "type": "pie",
       "dataProvider": [{
-        "country": "Czech Republic",
-        "litres": 156.9
+        "medication": "Exoderm Flare Control Cream",
+        "oz-used": 156.9
       }, {
-        "country": "Ireland",
-        "litres": 131.1
+        "medication": "Benadryl Itch Stopping Gel",
+        "oz-used": 131.1
       }, {
-        "country": "Germany",
-        "litres": 115.8
-      }, {
-        "country": "Australia",
-        "litres": 109.9
-      }, {
-        "country": "Austria",
-        "litres": 108.3
-      }, {
-        "country": "UK",
-        "litres": 65
-      }, {
-        "country": "Belgium",
-        "litres": 50
+        "medication": "EltaMD Elta Tar",
+        "oz-used": 115.8
       }],
-      "titleField": "country",
-      "valueField": "litres",
+      "titleField": "medication",
+      "valueField": "oz-used",
       "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
       "legend": {
         "align": "center",
@@ -81,174 +70,40 @@
   <script>
     var chart;
     var graph;
+
     var chartData = [{
-      "year": "1950",
-      "value": -0.307
-    }, {
-      "year": "1951",
-      "value": -0.168
-    }, {
-      "year": "1952",
-      "value": -0.073
-    }, {
-      "year": "1953",
-      "value": -0.027
-    }, {
-      "year": "1954",
-      "value": -0.251
-    }, {
-      "year": "1955",
-      "value": -0.281
-    }, {
-      "year": "1956",
-      "value": -0.348
-    }, {
-      "year": "1957",
-      "value": -0.074
-    }, {
-      "year": "1958",
-      "value": -0.011
-    }, {
-      "year": "1959",
-      "value": -0.074
-    }, {
-      "year": "1960",
-      "value": -0.124
-    }, {
-      "year": "1961",
-      "value": -0.024
-    }, {
-      "year": "1962",
-      "value": -0.022
-    }, {
-      "year": "1963",
-      "value": 0
-    }, {
-      "year": "1964",
-      "value": -0.296
-    }, {
-      "year": "1965",
-      "value": -0.217
-    }, {
-      "year": "1966",
-      "value": -0.147
-    }, {
-      "year": "1967",
-      "value": -0.15
-    }, {
-      "year": "1968",
-      "value": -0.16
-    }, {
-      "year": "1969",
-      "value": -0.011
-    }, {
-      "year": "1970",
-      "value": -0.068
-    }, {
-      "year": "1971",
-      "value": -0.19
-    }, {
-      "year": "1972",
-      "value": -0.056
-    }, {
-      "year": "1973",
-      "value": 0.077
-    }, {
-      "year": "1974",
-      "value": -0.213
-    }, {
-      "year": "1975",
-      "value": -0.17
-    }, {
-      "year": "1976",
-      "value": -0.254
-    }, {
-      "year": "1977",
-      "value": 0.019
-    }, {
-      "year": "1978",
-      "value": -0.063
-    }, {
-      "year": "1979",
-      "value": 0.05
-    }, {
-      "year": "1980",
-      "value": 0.077
-    }, {
-      "year": "1981",
-      "value": 0.12
-    }, {
-      "year": "1982",
-      "value": 0.011
-    }, {
-      "year": "1983",
-      "value": 0.177
-    }, {
-      "year": "1984",
-      "value": -0.021
-    }, {
-      "year": "1985",
-      "value": -0.037
-    }, {
-      "year": "1986",
-      "value": 0.03
-    }, {
-      "year": "1987",
-      "value": 0.179
-    }, {
-      "year": "1988",
-      "value": 0.18
-    }, {
-      "year": "1989",
-      "value": 0.104
-    }, {
-      "year": "1990",
-      "value": 0.255
-    }, {
-      "year": "1991",
-      "value": 0.21
-    }, {
-      "year": "1992",
-      "value": 0.065
-    }, {
-      "year": "1993",
-      "value": 0.11
-    }, {
-      "year": "1994",
-      "value": 0.172
-    }, {
-      "year": "1995",
-      "value": 0.269
-    }, {
-      "year": "1996",
-      "value": 0.141
-    }, {
-      "year": "1997",
-      "value": 0.353
-    }, {
-      "year": "1998",
-      "value": 0.548
-    }, {
-      "year": "1999",
-      "value": 0.298
-    }, {
-      "year": "2000",
-      "value": 0.267
-    }, {
-      "year": "2001",
-      "value": 0.411
-    }, {
-      "year": "2002",
-      "value": 0.462
-    }, {
-      "year": "2003",
-      "value": 0.47
-    }, {
-      "year": "2004",
-      "value": 0.445
-    }, {
       "year": "2005",
-      "value": 0.47
+      "value": 42
+    }, {
+      "year": "2006",
+      "value": 48
+    }, {
+      "year": "2007",
+      "value": 50.4
+    }, {
+      "year": "2008",
+      "value": 52.5
+    }, {
+      "year": "2009",
+      "value": 54.5
+    }, {
+      "year": "2010",
+      "value": 56.5
+    }, {
+      "year": "2011",
+      "value": 58.7
+    }, {
+      "year": "2012",
+      "value": 61.5
+    }, {
+      "year": "2013",
+      "value": 64.5
+    }, {
+      "year": "2014",
+      "value": 67
+    }, {
+      "year": "2015",
+      "value": 68.3
     }];
 
 
@@ -873,8 +728,9 @@ Suicide Prevention: 1-800-273-8255</pre>
           <h2>Statistics</h2></header>
         <h3 align="center"><font color="#ff1a66">Drug Consumption</h>
                                 <div id="chart1div" style="width:100%; height:400px;"></div>
-                                <h3 align="center">Chart 2</font></h>
+                                <h3 align="center">Drug Percentages</font></h>
                                 <div id="chart2div" style="width: 100%; height: 400px;"></div>
+                                <img src="./images/BMI.jpg" style="width: 100%;">
                             </article>
                     </div>
                 <!-- Footer -->
